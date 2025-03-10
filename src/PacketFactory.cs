@@ -1,11 +1,10 @@
-﻿using System.Text;
-using System.IO;
+﻿using System.IO;
 
 namespace Crossplay
 {
     public class PacketFactory
     {
-        private MemoryStream memoryStream;
+        private readonly MemoryStream memoryStream;
         public BinaryWriter writer;
         public PacketFactory(bool writeOffset = true)
         {
@@ -90,6 +89,7 @@ namespace Crossplay
             writer.Write(str);
             return this;
         }
+
 
         public PacketFactory PackBuffer(byte[] buffer)
         {
